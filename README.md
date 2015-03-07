@@ -2,6 +2,23 @@
 
 Manage a rabble of users.
 
+### Usage
+
+```javascript
+export default function(server) {
+  return server.registerAsync({
+    register : require('rabble'),
+    options : {
+      privateKey : process.env.JWT_SECRET,
+
+      getUser : function(decodedToken) {
+        return UserMapper.find(decodedToken.id);
+      },
+    },
+  });
+}
+```
+
 ### API Endpoints
 
 This module provides some helpers for you, but due to the incredibly diverse
@@ -93,7 +110,7 @@ server.route({
     },
 
   },
-})
+});
 ```
 
 ### Get Logged In User
