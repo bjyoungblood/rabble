@@ -56,8 +56,6 @@ function register(server, options, next) {
 
   options = validate.value;
 
-  require('./api/index')(server, options);
-
   // Expose the options that were passed to this plugin
   server.expose(options);
 
@@ -101,6 +99,7 @@ function register(server, options, next) {
   // Register the 'rabble' auth strategy using the 'jwt' scheme and the
   // options passed to the plugin
   server.auth.strategy('rabble', 'jwt', {
+    getUser : options.getUser,
     privateKey : options.privateKey,
     publicKey : options.publicKey,
     jwtOptions : options.jwtOptions,

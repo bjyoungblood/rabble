@@ -71,9 +71,6 @@ export default function auth(server, options) {
         .catch(jwt.JsonWebTokenError, (err) => {
           throw Boom.unauthorized('Invalid token or signature');
         })
-        .catch((err) => {
-          throw Boom.unauthorized(err.message);
-        })
         .reflect()
         .then((result) => {
           if (result.isFulfilled()) {
