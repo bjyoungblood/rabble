@@ -1,0 +1,64 @@
+{
+  // General config
+  "esnext": true,
+  "esprima": "./node_modules/esprima-fb",
+
+  // Files
+  "fileExtensions": [".js", ".jsx"],
+  "excludeFiles": [
+    "node_modules/**",
+    "dist/**"
+  ],
+
+  "requireCurlyBraces": [
+    // Excludes case and default from the default rule
+    "if", "else", "for", "while", "do", "try", "catch"
+  ],
+
+  "requireSpaceBeforeBlockStatements": true,    // space before opening brace
+  "disallowNewlineBeforeBlockStatements": true, // opening brace on same line
+  "requireBlocksOnNewline": true,
+  "disallowEmptyBlocks": true,
+  "requireCapitalizedConstructors": true,
+
+  "disallowMultipleVarDecl": true,
+
+  "requireSpacesInsideArrayBrackets": "allButNested",
+  "requireSpacesInsideObjectBrackets": "allButNested",
+  "requireSpaceAfterObjectKeys": true,
+  "requireSpaceBeforeObjectValues": true,
+  "disallowQuotedKeysInObjects": "allButReserved",
+
+  "requireSpaceAfterKeywords": [
+    "do", "for", "if", "else", "switch", "case", "try", "void",
+    "while", "with", "return", "typeof"
+  ],
+
+  "requireSpacesInAnonymousFunctionExpression": {
+    "beforeOpeningCurlyBrace": true
+  },
+
+  "requireSpacesInConditionalExpression": true, // Spaces in ternaries
+  "disallowSpacesInCallExpression": true,       // myFunc(arg1), not myFunc (arg1)
+  "requireSpaceBetweenArguments": true,
+  "requireSpaceBeforeBinaryOperators": true,
+  "requireSpaceAfterBinaryOperators": true,
+  "disallowSpaceBeforePostfixUnaryOperators": ["++", "--"],
+  "requireSpaceAfterPrefixUnaryOperators": ["!", "+", "~"],
+  "requireDotNotation": true,
+
+  "requireCommaBeforeLineBreak": true,
+  "requireOperatorBeforeLineBreak": true,
+
+  "disallowMultipleLineBreaks": true,
+  "disallowTrailingWhitespace": true,
+
+  "requireLineFeedAtFileEnd": true,
+  "validateLineBreaks": "LF",
+  "requireSpaceAfterLineComment": { "allExcept": [ "#", "=" ] },
+  "validateIndentation": 2,
+  "validateQuoteMarks": {
+    "mark": "'",
+    "escape" : true
+  }
+}
