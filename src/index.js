@@ -94,19 +94,16 @@ function register(server, options, next) {
   ]);
 
   // Register the 'jwt' auth scheme
-  server.auth.scheme('jwt', auth);
+  server.auth.scheme('rabble-jwt', auth);
 
   // Register the 'rabble' auth strategy using the 'jwt' scheme and the
   // options passed to the plugin
-  server.auth.strategy('rabble', 'jwt', {
+  server.auth.strategy('rabble', 'rabble-jwt', {
     getUser : options.getUser,
     privateKey : options.privateKey,
     publicKey : options.publicKey,
     jwtOptions : options.jwtOptions,
   });
-
-  // Set the default auth strategy to 'rabble'
-  server.auth.default('rabble');
 
   next();
 }
